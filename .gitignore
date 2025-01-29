@@ -172,3 +172,7 @@ cython_debug/
 
 # MacOS
 .DS_Store
+
+#Ignorar archivo autogenerado
+a1_matricula.txt
+
