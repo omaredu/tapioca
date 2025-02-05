@@ -1,62 +1,62 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<HTML><HEAD>
-<TITLE>Internet Connection Server Webmaster's Guide</TITLE>
-<!-- Begin Header Records  ========================================== -->
-<!-- ICSWGMST SCRIPT A converted by B2H R2.2a (243) (CMS-OS2) by EGD  -->
-<!-- at RALVM13 on 24 Jun 1996 at 13:38:36                            -->
-<META HTTP-EQUIV="security"  CONTENT="public">
-<META HTTP-EQUIV="updated"  CONTENT="1996-06-24">
-<META HTTP-EQUIV="review"  CONTENT="2000">
-<META HTTP-EQUIV="expires"  CONTENT="2000">
-</HEAD><BODY>
-<!-- COMPONENT_NAME: web                                             -->        
-<!--                                                                 -->        
-<!-- FUNCTIONS:                                                      -->        
-<!--                                                                 -->        
-<!-- ORIGINS:  27                                                    -->        
-<!--                                                                 -->        
-<!-- (C) COPYRIGHT International Business Machines Corp. 1995, 1996  -->        
-<!-- All Rights Reserved                                             -->        
-<!-- Licensed Materials - Property of IBM                            -->        
-<!--                                                                 -->        
-<!-- US Government Users Restricted Rights - Use, duplication or     -->        
-<!-- disclosure restricted by GSA ADP Schedule Contract with IBM Corp. -->      
-<!--                                                                 -->        
-<!-- End Header Records  ============================================ -->
-<A NAME=Top_Of_Page>&nbsp;</A>
-<P>
-<H1><A NAME="Header_1" HREF="icswgmst.html#ToC_1">Welcome&#33;</A></H1>
-<P>
+
+
+Internet Connection Server Webmaster's Guide
+
+
+
+
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      
+        
+
+ 
+
+Welcome!
+
 This book describes both the IBM Internet Connection Server and the IBM Internet Connection Secure Server for OS/2 Warp.
-<UL>
-<P><LI>Part 1 gives a brief overview of the IBM software servers and
+
+Part 1 gives a brief overview of the IBM software servers and
 a more extensive overview of the Internet Connection Server and the Internet Connection Secure Server.
-<P><LI>Part 2 provides planning and installing information for your server.
-<P><LI>Part 3 provides information on using your server.
-</UL>
-<P><B>Note: </B>When we say "the server" in this book, we mean either the
+Part 2 provides planning and installing information for your server.
+Part 3 provides information on using your server.
+
+Note: When we say "the server" in this book, we mean either the
 Internet Connection Server or the Internet Connection Secure Server.
 When we say "the secure server", we mean only the Internet Connection Secure Server.
-<HR>
-<H2><A NAME="HDRROADMAP" HREF="icswgmst.html#ToC_2">Information road map</A></H2>
-<BR>
-<P><B><A NAME="Table_1">Table 1. Information road map</A></B><BR>
-<PRE><TT>
+
+Information road map
+
+Table 1. Information road map
+
 +======================================+======================================+
 | If you want to...                    | Refer to...                          |
 +======================================+======================================+
-| Read about the server                | <CITE>Up and Running!</CITE>                      |
+| Read about the server                | Up and Running!                      |
 +--------------------------------------+--------------------------------------+
-| Plan for the server                  | <CITE>Up and Running!</CITE>                      |
+| Plan for the server                  | Up and Running!                      |
 +--------------------------------------+--------------------------------------+
-| Install the server without a         | <CITE>Up and Running!</CITE>                      |
+| Install the server without a         | Up and Running!                      |
 | response file from a CD-ROM or a     |                                      |
 | remote code server                   |                                      |
 +--------------------------------------+--------------------------------------+
-| Automatically install the server     | <CITE>Up and Running!</CITE>                      |
+| Automatically install the server     | Up and Running!                      |
 | using a response file                |                                      |
 +--------------------------------------+--------------------------------------+
-| Install the server using SystemView  | <CITE>Up and Running!</CITE>                      |
+| Install the server using SystemView  | Up and Running!                      |
 +--------------------------------------+--------------------------------------+
 | Start and stop the server            | the appropriate section              |
 +--------------------------------------+--------------------------------------+
@@ -71,9 +71,9 @@ When we say "the secure server", we mean only the Internet Connection Secure Ser
 +--------------------------------------+--------------------------------------+
 | Use the server commands              | the appropriate section              |
 +--------------------------------------+--------------------------------------+
-| View online documentation            | <CITE>Up and Running!</CITE>                      |
+| View online documentation            | Up and Running!                      |
 +--------------------------------------+--------------------------------------+
-| Print or order copies of the         | <CITE>Up and Running!</CITE>                      |
+| Print or order copies of the         | Up and Running!                      |
 | documentation                        |                                      |
 +--------------------------------------+--------------------------------------+
 | Protect your server from unwanted    | the appropriate section              |
@@ -82,7 +82,7 @@ When we say "the secure server", we mean only the Internet Connection Secure Ser
 | Use security functions to make your  | the appropriate section              |
 | communications secure                |                                      |
 +--------------------------------------+--------------------------------------+
-| Write programs that can interface    | <CITE>Web Programming Guide</CITE>                |
+| Write programs that can interface    | Web Programming Guide                |
 | with the server                      |                                      |
 +--------------------------------------+--------------------------------------+
 | Use server-side includes to imbed    | the appropriate section              |
@@ -98,51 +98,51 @@ When we say "the secure server", we mean only the Internet Connection Secure Ser
 +--------------------------------------+--------------------------------------+
 | Create HTML documents                | http://www.ics.raleigh.ibm.com/      |
 +--------------------------------------+--------------------------------------+
-</TT></PRE><P>
-<HR>
-<H2><A NAME="HDRNEW41" HREF="icswgmst.html#ToC_3">What's new in Version 4.1</A></H2>
-<P>
+
+
+What's new in Version 4.1
+
 Enhancements for this version include:
-<DL>
-<P><DT><B>Improved logging and reporting
-</B><DD>You can control the access requests that your server logs.  You can
+
+Improved logging and reporting
+You can control the access requests that your server logs.  You can
 also create and view reports based on the information in your access
 logs.  You can customize your reports or use any of the report
 templates that are provided.
-<P><DT><B>Support for user-written programs that interface with your server
-</B><DD>You can write programs that communicate and interact with your
+Support for user-written programs that interface with your server
+You can write programs that communicate and interact with your
 server, via either the Common Gateway Interface (CGI) or the
 Internet Connection API (ICAPI).
 For example, you can write a CGI program to generate a dynamic
 response to user input, or you can write an ICAPI program to
 customize the way errors are handled.
-<P><DT><B>Support for server-side includes
-</B><DD>You can insert dynamic (changing) information into HTML
+Support for server-side includes
+You can insert dynamic (changing) information into HTML
 documents and CGI programs that the server sends to clients.
 For example, you can include the current date, the file size,
 and the date of the last change to the file.
-<P><DT><B>Customizable error messages
-</B><DD>You can tailor the messages that your server returns to clients
+Customizable error messages
+You can tailor the messages that your server returns to clients
 when errors occur.
 For example, you can modify a message to explain
 how to fix a particular problem.
 For internal networks, you might even include the name and number of
 the contact person.
-<P><DT><B>Support for multiple IP addresses
-</B><DD>If you run your server on a machine with multiple
+Support for multiple IP addresses
+If you run your server on a machine with multiple
 network addresses, you can configure it to serve different files
 based on the IP address that a request comes in on.
 For example, an Internet service provider can configure
 a single server to supply multiple customers with Web sites with
 differing welcome pages, mapping rules, and access control.
-</DL>
-<P>
-<B>Configuration directives new in Version 4.1</B>:
-<A NAME="SPTNEWDIRS"><I>(Ref #1.)</I></A>
-<BR>
-<PRE><TT>
+
+
+Configuration directives new in Version 4.1:
+(Ref #1.)
+
+
                                                                                
-  &nbsp;
+   
             AccessLogArchive                  DataFilter Error                 
             AccessLogExcludeMethod            ErrorLogArchive ErrorLogExpire   
             AccessLogExcludeMimeType          ErrorLogSizeLimit ErrorPage Log  
@@ -163,8 +163,8 @@ differing welcome pages, mapping rules, and access control.
             Authentication Authorization                                       
             BindSpecific                                                       
                                                                                
-</TT></PRE><P>
-<P><HR><B>&#91; <A HREF="#Top_Of_Page">Top of Page</A> &#124; <A HREF="icswgmst.html">Previous Page</A> &#124; <A HREF="icswg003.html">Next Page</A> &#124; <A HREF="icswgmst.html#ToC">Table of Contents</A> &#93;</B>
-<A NAME=Bot_Of_Page>&nbsp;</A>
-</BODY></HTML>
+
+[ Top of Page | Previous Page | Next Page | Table of Contents ]
+ 
+
 

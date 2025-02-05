@@ -1,12 +1,12 @@
-<title>AIRSAR Compressed Stokes Matrix Data (CM) Description</title>
-<h1>AIRSAR Compressed Stokes Matrix Data (CM) Description</h1>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p>This manual is still being converted...</p>
-<hr>
-<pre>
+AIRSAR Compressed Stokes Matrix Data (CM) Description
+AIRSAR Compressed Stokes Matrix Data (CM) Description
+
+
+
+
+This manual is still being converted...
+
+
 
 AIRSAR Data Compression Formats
 
@@ -23,7 +23,7 @@ AIRSAR Data Compression Formats
 			(vax real*4, single pol, low-res, 4 bytes/pixel)
 	In the following descriptions:
 	
-		sign( ) will return the sign of the argument ( ฑ 1) 
+		sign( ) will return the sign of the argument ( ยฑ 1) 
 
 		nint( ) will indicate that the nearest integer value is calculated of its 
 argument.  
@@ -51,19 +51,19 @@ file are header lines.  The data has been symmetrized such that SHV = 0.5 (SHV +
 and is usually calibrated.  For the "730 processor", the data has been multilooked by 4, 
 while for the "3.5 processor", the data has been multilooked by 16.  
 
-ก 10 bytes per pixel - quad-pol data, with:
-	ก Byte(1) :  int{log2(M11)}
-	ก Byte(2) : nint{254[Mantissa  - 1.5]}
+ยก 10 bytes per pixel - quad-pol data, with:
+	ยก Byte(1) :  int{log2(M11)}
+	ยก Byte(2) : nint{254[Mantissa  - 1.5]}
 		Mantissa = (M11) / 2Byte(1))
 		qsca = gen_fac [ (Byte(2) / 254 ) + 1.5] 2Byte(1)
-	ก Byte(3) : nint{127 M12/qsca}
-	ก Byte(4) : nint{127 sign(M13/qsca) sqrt(M13/qsca)}
-	ก Byte(5) : nint{127 sign(M14/qsca) sqrt(M14/qsca)}
-	ก Byte(6) : nint{127 sign(M23/qsca) sqrt(M23/qsca)}
-	ก Byte(7) : nint{127 sign(M24/qsca) sqrt(M24/qsca)}
-	ก Byte(8) : nint{127 M33/qsca}
-	ก Byte(9) : nint{127 M34/qsca}
-	ก Byte(10) : nint{127 M44/qsca}
+	ยก Byte(3) : nint{127 M12/qsca}
+	ยก Byte(4) : nint{127 sign(M13/qsca) sqrt(M13/qsca)}
+	ยก Byte(5) : nint{127 sign(M14/qsca) sqrt(M14/qsca)}
+	ยก Byte(6) : nint{127 sign(M23/qsca) sqrt(M23/qsca)}
+	ยก Byte(7) : nint{127 sign(M24/qsca) sqrt(M24/qsca)}
+	ยก Byte(8) : nint{127 M33/qsca}
+	ยก Byte(9) : nint{127 M34/qsca}
+	ยก Byte(10) : nint{127 M44/qsca}
 	The total power is :
 		TP = M11 = gen_fac ( byte(2) / 254 + 1.5) 2Byte(1)) 
 	The remaining terms are given by :
@@ -139,12 +139,11 @@ Stokes Matrix is given by:
 	m(4,2) = (-Im(ShhSvh*) + Im(ShvSvv*) )/ 2.0
 	m(4,3) =  (-Im(ShhSvv* - Im(ShvSvh*) / 2.0
 	m(4,4) = (Re(ShvSvh*) - Re(ShhSvv*) )/ 2.0
-</pre>
 
-<hr>
-<A HREF="/index.html"><IMG SRC="gif/icons/back-yellow.gif"
-ALIGN=BOTTOM></A>     Imaging Radar Home Page
-<hr>
-<ADDRESS>Updated 8/25/94</ADDRESS>
-<ADDRESS>bruce.chapman@jpl.nasa.gov</ADDRESS>
+
+
+     Imaging Radar Home Page
+
+Updated 8/25/94
+bruce.chapman@jpl.nasa.gov
 	
