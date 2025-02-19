@@ -25,7 +25,7 @@ def compose_add_words(file_name, log_file, output_file):
         end_time = time.time()
         extract_time = end_time - start_time
 
-        with open(output_file, 'x', encoding='utf-8') as file:
+        with open(output_file, 'a', encoding='utf-8') as file:
             file.write('\n'.join(content))
 
         with open(log_file, 'a', encoding='utf-8') as log:
@@ -53,8 +53,9 @@ def compose_order_file(file_name):
             content = file.read().splitlines()
             lowercase_content = [word.lower() for word in content]
             ordered_content = sorted(lowercase_content, key=str.lower)
+            file.seek(0)
             file.truncate(0)
-            file.write(ordered_content)
+            file.write('\n'.join(ordered_content))
         
         end_time = time.time()
         order_time = end_time - start_time

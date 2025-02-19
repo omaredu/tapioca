@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import time
+import shutil
 from file_reader import open_file, log_results
 from remove_tags import remove_html_tags, log_cleaning_results
 from order_words import order_words_file, log_ordering_results
@@ -11,16 +12,21 @@ def main():
     base_directory = os.getcwd() # cambiar ruta !!!!
     subfolder = "resources"
     directory = os.path.join(base_directory, subfolder)
+
     # Directorio para archivos output de actividad 3
     resources_order_output = "act3_ordered"
     output_directory = os.path.join(base_directory, resources_order_output)
     if os.path.exists(output_directory):
-        os.rmdir(output_directory)
+        shutil.rmtree(output_directory)
+        os.makedirs(output_directory)
     else:
         os.makedirs(output_directory)
     
     # Archivo para output de actividad 4
     compose_file_output = "act4_archivoConsolidado.txt"
+    compose_file_directory = os.path.join(base_directory, compose_file_output)
+    if os.path.exists(compose_file_directory):
+        os.remove(compose_file_directory)
     
     # creacion de los logs separados
     log_file = "a1_matricula.txt"
@@ -47,7 +53,7 @@ def main():
     for file_name in sorted(files_in_directory):
         if file_name.endswith(".html"):
             file_path = os.path.join(directory, file_name)
-            output_file = os.path.join(output_directory, file_name)
+            act3_output_file = os.path.join(output_directory, file_name)
             print(f"Procesando archivo: {file_path}")
             
             # Medir tiempo de limpieza
@@ -61,12 +67,12 @@ def main():
             end_time = time.time() 
 
             # Medir tiempo de ordenado de palabras
-            order_time = order_words_file(file_path, log_file_order, output_file)
+            order_time = order_words_file(file_path, log_file_order, act3_output_file)
             if order_time is not None:
                 total_order_time += order_time
 
             # Medir el tiempo al agregar palabras al archivo consolidado
-            extract_time = compose_add_words(file_path, compose_file_output)
+            extract_time = compose_add_words(act3_output_file, log_file_compose, compose_file_output)
             if extract_time is not None:
                 total_compose_time += extract_time
             
@@ -83,7 +89,7 @@ def main():
             else:
                 print(f"No se pudo abrir el archivo: {file_path}")
 
-    compose_order_time = compose_order_file(compose_file_output)
+    compose_order_time = compose_order_file(compose_file_directory)
     total_end_time = time.time()  # Tiempo total final
     total_execution_time = total_end_time - total_start_time
 
