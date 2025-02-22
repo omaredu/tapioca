@@ -173,11 +173,17 @@ cython_debug/
 # MacOS
 .DS_Store
 
-#Ignorar archivo autogenerado
+#Ignorar logs autogenerados
 a1_matricula.txt
 
 a2_clean.txt
 
 a3_matricula.txt
 
+a4_matricula.txt
+
+#Ignorar archivos autogenerados
+act4_archivoConsolidado.txt
+
+#Ignorar directorios autogenerados
 act3_ordered/
