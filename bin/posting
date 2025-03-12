@@ -1,0 +1,6 @@
+#!/bin/bash
+# -*- coding: utf-8 -*-
+
+ARGS=("$@")
+
+python3 src/post_dictionary.py ${ARGS[@]}
