@@ -1,4 +1,0 @@
-Tiempo total: 22.9765 s
-Tiempo carga CSV: 2.8584 s
-Tiempo calculo TF-IDF: 15.6878 s
-Tiempo escritura ASCII: 4.4303 s
