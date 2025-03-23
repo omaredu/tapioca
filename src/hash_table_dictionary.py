@@ -1,6 +1,8 @@
 import pandas as pd
 import os
 import sympy
+
+
 class HashTable:
     def __init__(self, size=1000):
         self.size = sympy.nextprime(size)
@@ -8,6 +10,7 @@ class HashTable:
         self.frequencies = [0] * self.size
         self.positions = [-1] * self.size
         self.collisions = 0
+
     def insert(self, key, frequency, position):
         index = hash(key) % self.size
 
@@ -16,7 +19,9 @@ class HashTable:
             self.collisions += 1
             index = (index + 1) % self.size
             if index == original_index:
-                raise Exception("Tabla Hash llena, no se pueden insertar más elementos.")
+                raise Exception(
+                    "Tabla Hash llena, no se pueden insertar más elementos."
+                )
 
         self.table[index] = key
         self.frequencies[index] = frequency
@@ -39,9 +44,11 @@ class HashTable:
                 token = str(self.table[i])
                 frequency = self.frequencies[i]
                 position = self.positions[i]
-                line = (f"{i+1:<4} {''.ljust(20)} {0:<5} {-1:<5}\n"
-                        if token == "" else
-                        f"{i+1:<4} {token.ljust(20)} {frequency:<5} {position:<5}\n")
+                line = (
+                    f"{i + 1:<4} {''.ljust(20)} {0:<5} {-1:<5}\n"
+                    if token == ""
+                    else f"{i + 1:<4} {token.ljust(20)} {frequency:<5} {position:<5}\n"
+                )
 
                 f.write(line)
                 print(line, end="")
@@ -52,9 +59,13 @@ class HashTable:
 
 
 class DictionaryHashTable:
-    def __init__(self, dictionary_path="out/dictionary.csv", posting_path="out/posting.csv"):
+    def __init__(
+        self, dictionary_path="out/dictionary.csv", posting_path="out/posting.csv"
+    ):
         if not os.path.exists(dictionary_path) or not os.path.exists(posting_path):
-            raise FileNotFoundError(f"❌ Archivos {dictionary_path} o {posting_path} no encontrados.")
+            raise FileNotFoundError(
+                f"❌ Archivos {dictionary_path} o {posting_path} no encontrados."
+            )
 
         self.dictionary_path = dictionary_path
         self.posting_path = posting_path
