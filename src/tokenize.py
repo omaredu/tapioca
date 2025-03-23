@@ -35,23 +35,24 @@ class Tokenizer:
         Path(path).parent.mkdir(parents=True, exist_ok=True)
 
 
-parser = argparse.ArgumentParser(description="Tokenize words from a file")
-parser.add_argument("input", help="Input file path", type=str)
-parser.add_argument("output", help="Output file path", type=str)
-parser.add_argument("--log", action="store_true", help="Enable logger")
-args = parser.parse_args()
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Tokenize words from a file")
+    parser.add_argument("input", help="Input file path", type=str)
+    parser.add_argument("output", help="Output file path", type=str)
+    parser.add_argument("--log", action="store_true", help="Enable logger")
+    args = parser.parse_args()
 
-measure = measure.Measure()
-logger = logger.Logger("logs/tokenizer.log") if args.log else None
-measure.start()
+    measure = measure.Measure()
+    logger = logger.Logger("logs/tokenizer.log") if args.log else None
+    measure.start()
 
-tokenizer = Tokenizer(args.input, args.output)
-tokenizer.tokenize()
+    tokenizer = Tokenizer(args.input, args.output)
+    tokenizer.tokenize()
 
-execution_time = measure.stop()
-print(f"Execution time (milliseconds): {execution_time} ms")
+    execution_time = measure.stop()
+    print(f"Execution time (milliseconds): {execution_time} ms")
 
-if logger:
-    logger.log(
-        f"{args.input} tokenization process completed in {execution_time} ms. Output file: {args.output}"
-    )
+    if logger:
+        logger.log(
+            f"{args.input} tokenization process completed in {execution_time} ms. Output file: {args.output}"
+        )
