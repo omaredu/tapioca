@@ -1,0 +1,5 @@
+Creando Documents.csv...
+Creación Documents.csv: 0.0066 segundos
+Modificación Posting.csv: 0.3603 segundos
+Cálculo de peso de los tokens: 0.0000 segundos
+Tiempo total : 0.3670 segundos
