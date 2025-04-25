@@ -4,7 +4,7 @@ def search(word, dictionary, postings, documents):
     word = word.lower().strip()
 
     if word not in dictionary:
-        print(f"⚠️ La palabra '{word}' no fue encontrada en el diccionario.")
+        print(f"⚠ La palabra '{word}' no fue encontrada en el diccionario.")
         return None
 
     entry = dictionary[word]
@@ -30,7 +30,7 @@ def search(word, dictionary, postings, documents):
         if doc_name in documents:
             results.append(documents[doc_name])
         else:
-            print(f"⚠️ El archivo '{doc_name}' no tiene una ruta en documents.csv.")
+            print(f" El archivo '{doc_name}' no tiene una ruta en documents.csv.")
 
     return results
 
