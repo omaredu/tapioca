@@ -1,0 +1,14 @@
+Consulta: gift
+Top 10 documentos:
+1. 222.html (puntaje: 1)
+2. 383.html (puntaje: 1)
+3. 043.html (puntaje: 1)
+4. 074.html (puntaje: 1)
+5. 149.html (puntaje: 1)
+6. 324.html (puntaje: 1)
+7. 298.html (puntaje: 1)
+8. 051.html (puntaje: 1)
+9. 397.html (puntaje: 1)
+10. 180.html (puntaje: 1)
+
+⏱️ Tiempo de búsqueda: 0.061421 segundos
