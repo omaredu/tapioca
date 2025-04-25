@@ -1,0 +1,45 @@
+Palabra buscada: 'elephants'
+Tiempo de búsqueda: 0.0001 segundos
+
+Palabra buscada: 'csce'
+Tiempo de búsqueda: 0.0002 segundos
+
+Palabra buscada: 'arkansas'
+Tiempo de búsqueda: 0.0002 segundos
+
+Palabra buscada: 'giftf'
+Tiempo de búsqueda: 0.0000 segundos
+
+Palabra buscada: 'gift'
+Tiempo de búsqueda: 0.0003 segundos
+
+Palabra buscada: 'abcdef'
+Tiempo de búsqueda: 0.0002 segundos
+
+Palabra buscada: '29'
+Tiempo de búsqueda: 0.0003 segundos
+
+Palabra buscada: '20'
+Tiempo de búsqueda: 0.0002 segundos
+
+Palabra buscada: '20.07'
+Tiempo de búsqueda: 0.0003 segundos
+
+Palabra buscada: '123-456-7890'
+Tiempo de búsqueda: 0.0001 segundos
+
+Palabra buscada: 'lawyer consumers'
+Tiempo de búsqueda: 0.0002 segundos
+
+Palabra buscada: 'garden computer'
+Tiempo de búsqueda: 0.0001 segundos
+
+Palabra buscada: 'garden'
+Tiempo de búsqueda: 0.0002 segundos
+
+Palabra buscada: 'united states laws'
+Tiempo de búsqueda: 0.0001 segundos
+
+Palabra buscada: 'united'
+Tiempo de búsqueda: 0.0002 segundos
+
