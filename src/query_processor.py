@@ -10,7 +10,7 @@ OUT_DIR = os.path.join(BASE_DIR, "..", "out")
 
 POSTING_ORIGINAL = os.path.join(OUT_DIR, "posting.csv")  
 DOCUMENTS = os.path.join(OUT_DIR, "documents.csv")  
-POSTING_MODIFICADO = os.path.join(OUT_DIR, "posting.csv")
+NEW_POSTING = os.path.join(OUT_DIR, "new_posting.csv") 
 LOG = os.path.join(OUT_DIR, "a11_matricula.txt")
 
 def detect_encoding(file_path):
@@ -18,6 +18,8 @@ def detect_encoding(file_path):
         rawdata = f.read()
     result = chardet.detect(rawdata)
     return result.get("encoding", "utf-8")
+
+# Calcular peso de los tokens
 def calculate_tf(file_name, total_documents, document_map):
     file_path = os.path.join(RESOURCES_DIR, file_name)  
     try:
@@ -26,14 +28,11 @@ def calculate_tf(file_name, total_documents, document_map):
             total_tokens = len(tokens)
             if total_tokens == 0:
                 return 0.0
-            freq = {}
-            for token in tokens:
-                freq[token] = freq.get(token, 0) + 1
             tf_total = 0.0
-            for token, count in freq.items():
-                tf = (count * 100) / total_tokens  
-                tf_total += tf  
-            return tf_total  
+            for token in set(tokens): 
+                tf = (1 * 100) / total_tokens 
+                tf_total += tf
+            return round(tf_total, 4)  # Redondeo a 4 decimales
     except Exception as e:
         print(f"Error al calcular TF para el archivo {file_name}: {e}")
         return 0.0
@@ -52,11 +51,7 @@ def create_document_index(input_dir, output_doc_path):
 def load_document_mapping(doc_csv_path):
     df = pd.read_csv(doc_csv_path)
     return dict(zip(df["FileName"], df["DocumentID"]))  
-
-# Reescribir Posting 
-def rewrite_posting_with_ids_and_weights(posting_path, doc_map, output_path):
-    print("Calculando el peso de los tokens...")
-    
+def rewrite_new_posting_with_ids_and_weights(doc_map, output_path):
     posting_data = []
     total_documents = len(doc_map)
     
@@ -74,27 +69,37 @@ def run_query_phase():
     log_lines = []
     
     # Crear Documents.csv
-    log_lines.append("Creando Documents.csv...\n")
+    print("Creando Documents.csv...") 
+    log_lines.append("Creación Documents.csv...\n")
     start_docs = time.time()
     create_document_index(RESOURCES_DIR, DOCUMENTS)
     time_docs = time.time() - start_docs
     log_lines.append(f"Creación Documents.csv: {time_docs:.4f} segundos\n")
     
-    # Modificar Posting.csv 
+    # Crear Nuevo Posting.csv 
+    print("Creando Nuevo Posting...") 
+    log_lines.append("Creación Nuevo Posting...\n")
     start_mod = time.time()
     doc_map = load_document_mapping(DOCUMENTS)
-    rewrite_posting_with_ids_and_weights(POSTING_ORIGINAL, doc_map, POSTING_MODIFICADO)
+    rewrite_new_posting_with_ids_and_weights(doc_map, NEW_POSTING)
     time_mod = time.time() - start_mod
-    log_lines.append(f"Modificación Posting.csv: {time_mod:.4f} segundos\n")
+    log_lines.append(f"Creación Nuevo Posting.csv: {time_mod:.4f} segundos\n")
     
     # Calcular el peso de los tokens 
-    start_weight = time.time()
+    print("Calculando el peso de los tokens...")  
+    log_lines.append("Calculando el peso de los tokens...\n")
+    start_weight = time.time()  
+    doc_map = load_document_mapping(DOCUMENTS)
+    total_documents = len(doc_map)
+    weight_total = 0.0
+    for file_name, document_id in doc_map.items():
+        weight_total += calculate_tf(file_name, total_documents, doc_map)
     time_weight = time.time() - start_weight
     log_lines.append(f"Cálculo de peso de los tokens: {time_weight:.4f} segundos\n")
     
     # Tiempo total
     total_time = time.time() - start_total
-    log_lines.append(f"Tiempo total : {total_time:.4f} segundos\n")
+    log_lines.append(f"Tiempo total: {total_time:.4f} segundos\n")
 
     # Crear Log
     print("Creando Log...")
