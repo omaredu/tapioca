@@ -1,4 +1,4 @@
-#!/bin/bash
+__init__.py #!/bin/bash
 # -*- coding: utf-8 -*-
 
 ARGS=("$@")
