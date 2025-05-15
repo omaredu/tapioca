@@ -1,11 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Actividad 14</title>
+  <meta charset="UTF-8">
+  <title>Search Engine</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header {
+      background-color: teal;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;     
+      padding: 20px;
+      margin-top: 40px;        
+    }
+
+
+    form {
+      width: 100%;
+      max-width: 600px;        
+      display: flex;
+      flex-direction: column;
+      gap: 20px;               
+    }
+
+    label {
+      font-size: 1em;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 1.1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 4px;
+      background-color: #eee;
+      color: #333;
+      cursor: pointer;
+      align-self: center;     
+    }
+
+    button:hover {
+      background-color: #ddd;
+    }
+  </style>
 </head>
 <body>
-    <h1>¡Hola, Mundo desde Python con Flash</h1>
+  <div class="header">Search Engine</div>
+  <div class="container">
+    <form action="/" method="get">
+      <div>
+        <label for="q">Enter your search:</label>
+        <input type="text" id="q" name="q" required>
+      </div>
+      <button type="submit">Search</button>
+    </form>
+  </div>
 </body>
 </html>
-

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Results</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; }
+    .header {
+      background-color: teal;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8em;
+    }
+    .container {
+      width: 60%;
+      margin: 30px auto;
+    }
+    .result-item {
+      margin: 12px 0;
+    }
+    .result-item a {
+      color: #0066cc;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+    .score {
+      margin-left: 8px;
+      color: gray;
+      font-size: 0.9em;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 8px 12px;
+      background: #eee;
+      color: #333;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    .back-link:hover {
+      background: #ddd;
+    }
+    .no-results {
+      margin: 40px 0;
+      font-size: 1.2em;
+      color: #555;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">Results of: {{ query }}</div>
+  <div class="container">
+    {% if results %}
+      {% for link, score in results %}
+        <div class="result-item">
+          <a href="{{ link }}" target="_blank">{{ link }}</a>
+          <span class="score">{{ "%.2f"|format(score) }}</span>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="no-results">
+        No se encontraron resultados para "<strong>{{ query }}</strong>"
+      </div>
+    {% endif %}
+
+    <a href="/" class="back-link">← Volver a buscar</a>
+  </div>
+</body>
+</html>
