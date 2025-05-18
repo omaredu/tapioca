@@ -1,7 +1,7 @@
 from locust import HttpUser, task, constant
 
 class UsuarioBusqueda(HttpUser):
-    wait_time = constant(0) 
+    host = "http://localhost:5000" 
 
     @task(3)
     def busqueda_valida(self):

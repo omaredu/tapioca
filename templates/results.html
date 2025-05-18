@@ -42,20 +42,15 @@
     .back-link:hover {
       background: #ddd;
     }
-    .no-results {
-      margin: 40px 0;
-      font-size: 1.2em;
-      color: #555;
-      text-align: center;
-    }
   </style>
 </head>
 <body>
   <div class="header">Results of: {{ query }}</div>
   <div class="container">
     {% if results %}
-      {% for link, score in results %}
+      {% for idx, link, score in results %}
         <div class="result-item">
+          <strong>{{ idx }}.</strong>
           <a href="{{ link }}" target="_blank">{{ link }}</a>
           <span class="score">{{ "%.2f"|format(score) }}</span>
         </div>
@@ -65,7 +60,6 @@
         No se encontraron resultados para "<strong>{{ query }}</strong>"
       </div>
     {% endif %}
-
     <a href="/" class="back-link">← Volver a buscar</a>
   </div>
 </body>
